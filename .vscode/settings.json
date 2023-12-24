@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/48f3f5f8-1a89-4b85-a1e5-9735e2e3e748/resourceGroups/vmsis_group/providers/Microsoft.Web/sites/vmsis",
+    "appService.deploySubpath": "."
+}

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/48f3f5f8-1a89-4b85-a1e5-9735e2e3e748/resourceGroups/theprisongp/providers/Microsoft.Web/sites/theprison",
+    "appService.deploySubpath": "."
+}
