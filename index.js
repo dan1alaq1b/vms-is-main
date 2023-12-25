@@ -1,20 +1,30 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.json());
+// ...other middleware and route definitions
 
-// Routes
-app.use('/admin', require('./admin'));
-app.use('/visitor', require('./visitor'));
-app.use('/admin', require('./generatepass'));
-app.use('/visitor', require('./checkpass'));
+// Swagger options
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Visitor Management System API',
+      version: '1.0.0',
+      description: 'API documentation for Visitor Management System',
+    },
+  },
+  // Path to files containing OpenAPI specifications (e.g., your routes)
+  apis: ['./admin.js', './visitor.js', './generatepass.js', './checkpass.js'],
+};
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the Visitor Management System!');
-});
+const specs = swaggerJsdoc(options);
+
+// Serve Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

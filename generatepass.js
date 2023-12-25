@@ -1,9 +1,30 @@
-const express = require('express');
-const router = express.Router();
+/**
+ * @swagger
+ * tags:
+ *   name: GeneratePass
+ *   description: API endpoints for generating passes
+ */
 
-// Generate a visitor pass by an admin
-router.post('/generatepass', (req, res) => {
-  // Logic to generate a visitor pass
-});
-
-module.exports = router;
+/**
+ * @swagger
+ * /generatepass/generate:
+ *   post:
+ *     summary: Generate a visitor pass
+ *     description: Generate a pass for a visitor with necessary details
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               visitorName:
+ *                 type: string
+ *               purpose:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Pass generated successfully
+ *       '400':
+ *         description: Bad request
+ */

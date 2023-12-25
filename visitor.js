@@ -1,9 +1,32 @@
-const express = require('express');
-const router = express.Router();
+/**
+ * @swagger
+ * tags:
+ *   name: Visitor
+ *   description: API endpoints for visitor actions
+ */
 
-// View all visitors (accessible to visitors)
-router.get('/visitors', (req, res) => {
-  // Logic to view all visitors
-});
+/**
+ * @swagger
+ * /visitor/visitors:
+ *   get:
+ *     summary: Get all visitors
+ *     description: Retrieves a list of all visitors
+ *     responses:
+ *       '200':
+ *         description: Successful operation
+ *       '404':
+ *         description: No visitors found
+ */
 
-module.exports = router;
+/**
+ * @swagger
+ * /visitor/checkpass:
+ *   get:
+ *     summary: Check/verify visitor pass status
+ *     description: Check the status of the visitor pass
+ *     responses:
+ *       '200':
+ *         description: Successful operation
+ *       '404':
+ *         description: Pass not found
+ */

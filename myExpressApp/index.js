@@ -1,15 +1,3 @@
-/*
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. *
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
-*/
-
 const express = require('express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
@@ -34,6 +22,8 @@ const options = {
 };
 
 const specs = swaggerJsdoc(options);
+
+// Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.listen(port, () => {

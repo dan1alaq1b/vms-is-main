@@ -1,9 +1,19 @@
-const express = require('express');
-const router = express.Router();
+/**
+ * @swagger
+ * tags:
+ *   name: CheckPass
+ *   description: API endpoints for checking pass status
+ */
 
-// Check/verify visitor pass status (accessible to visitors)
-router.get('/checkpass', (req, res) => {
-  // Logic to check/verify visitor pass
-});
-
-module.exports = router;
+/**
+ * @swagger
+ * /checkpass/check:
+ *   get:
+ *     summary: Check/verify visitor pass status
+ *     description: Check the status of the visitor pass
+ *     responses:
+ *       '200':
+ *         description: Successful operation
+ *       '404':
+ *         description: Pass not found
+ */
