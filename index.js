@@ -12,6 +12,10 @@ app.use('/visitor', require('./visitor'));
 app.use('/admin', require('./generatepass'));
 app.use('/visitor', require('./checkpass'));
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Visitor Management System!');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
